@@ -13,8 +13,9 @@ public void printBoard(){
     Scanner scan = new Scanner(System.in);
     int co;
     for(int i = 0; i < 5; i++){
+    //while(co<11||co)
     co = scan.nextInt() - 1;
-    game[(int)(co/10-1)][co%10] = 3;
+    game[(int)(co/10)-1][co%10] = 3;
     }
     
     for (int r = 0; r <= column-1; r++){
