@@ -7,6 +7,6 @@ public class Tester{
       Scanner scan = new Scanner(System.in);
       String gametype = scan.nextLine();
       if(gametype.equals("R")||gametype.equals("r"))
-        ten.placeShip();
+        ten.placeShip("Aircraft Carrier", 5);
      }
 }

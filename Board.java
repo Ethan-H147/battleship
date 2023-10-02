@@ -9,39 +9,39 @@ public class Board {
 
 
 
-public void placeShip(){
+public void placeShip(String shipType, int shipSize){
     Scanner scan = new Scanner(System.in);
-    int AC;
-    System.out.println("Aircraft Carrier");
-    AC = scan.nextInt();
-    int x =AC%10;
-    int y =(int)(AC/10);
+    int coordinate;//initializing the coordinate for the ship in a two digit integer
+    System.out.println(shipType);
+    coordinate = scan.nextInt();
+    int x =coordinate%10;
+    int y =(int)(coordinate/10);
     game[x][y] = 5;
     System.out.println("East(1),North(2),West(3),South(4)");
     int facing = scan.nextInt();
     if(facing == 1){
-        for(int i=1; i<5; i++){
-            game[x][y+i] = 5;
+        for(int i=1; i<shipSize; i++){
+            game[x][y+i] = shipSize;
         }
     }
         else if(facing == 2){
-            for(int i=1; i<5; i++){
-                game[x-i][y] = 5;
+            for(int i=1; i<shipSize; i++){
+                game[x-i][y] = shipSize;
             }
         }
         else if(facing == 3){
-            for(int i=1; i<5; i++){
-                game[x][y-i] = 5;
+            for(int i=1; i<shipSize; i++){
+                game[x][y-i] = shipSize;
             }
         }
         else if(facing == 4){
-            for(int i=1; i<5; i++){
-                game[x+i][y] = 5;
+            for(int i=1; i<shipSize; i++){
+                game[x+i][y] = shipSize;
             }
         }
 printBoard();
 
-    int BS;
+    /*int BS;
     System.out.println("\nBattleship");
     BS = scan.nextInt();
     x =BS%10;
@@ -161,10 +161,13 @@ printBoard();
             }
         }
     printBoard();
-
+*/
     }
    
    
+private boolean isOccupied(int x, int y){
+    return game[x][y]!=0;
+} 
    
  public void printBoard(){
     for (int r = 0; r <= column-1; r++){
