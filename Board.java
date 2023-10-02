@@ -13,12 +13,19 @@ public void placeShip(String shipType, int shipSize){
     Scanner scan = new Scanner(System.in);
     int coordinate;//initializing the coordinate for the ship in a two digit integer
     System.out.println("\n"+shipType);
+    int x;
+    int y;
+    do{
     coordinate = scan.nextInt();
-    int x =coordinate%10;
-    int y =(int)(coordinate/10);
-    if(isOccupied(x,y)){
+    x = coordinate%10;
+    y = (int)(coordinate/10);
+        if(isOccupied(x,y)){
         System.out.print("Invalid coordinate, try again.");
     }
+    }
+    while(isOccupied(x,y));
+    
+
     game[x][y] = shipSize;
 
     System.out.println("East(1),North(2),West(3),South(4)");
