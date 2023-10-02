@@ -8,5 +8,9 @@ public class Tester{
       String gametype = scan.nextLine();
       if(gametype.equals("R")||gametype.equals("r"))
         ten.placeShip("Aircraft Carrier", 5);
+        ten.placeShip("Battleship", 4);
+        ten.placeShip("Cruiser", 3);
+        ten.placeShip("Submarine", 2);
+        ten.placeShip("Destroyer", 2);
      }
 }
