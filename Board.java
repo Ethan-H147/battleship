@@ -23,23 +23,28 @@ public void placeShip(String shipType, int shipSize){
         System.out.print("Invalid coordinate, try again.");
     }
     }
-    while(isOccupied(x,y));
+    while(isOccupied(x,y)||isOutofbound(x,y));
     
 
-    game[x][y] = shipSize;
+    //game[x][y] = shipSize;
 
     System.out.println("East(1),North(2),West(3),South(4)");
     int facing = scan.nextInt();
         for(int i=1; i<shipSize; i++){
             switch(facing){
             case 1: 
+            //if(isOutofbound(x, y+i)||isOccupied(x, y+i))
             game[x][y+i] = shipSize;
+            break;
             case 2:
             game[x-i][y] = shipSize;
+            break;
             case 3:
             game[x][y-i] = shipSize;
+            break;
             case 4:
             game[x+i][y] = shipSize;
+            break;
             }
         }
         printBoard();
@@ -53,7 +58,7 @@ public void placeShip(String shipType, int shipSize){
     } 
 
     private boolean isOutofbound(int x, int y){
-        return x<0||x>row||y<0||y>column;
+        return x<0||x>row-1||y<0||y>column-1;
     } 
    
     public void printBoard(){

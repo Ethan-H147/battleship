@@ -6,11 +6,12 @@ public class Tester{
       Board ten = new Board();
       Scanner scan = new Scanner(System.in);
       String gametype = scan.nextLine();
-      if(gametype.equals("R")||gametype.equals("r"))
+      if(gametype.equals("R")||gametype.equals("r")){
         ten.placeShip("Aircraft Carrier", 5);
         ten.placeShip("Battleship", 4);
         ten.placeShip("Cruiser", 3);
         ten.placeShip("Submarine", 2);
         ten.placeShip("Destroyer", 2);
+     }
      }
 }
