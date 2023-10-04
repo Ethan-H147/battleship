@@ -1,40 +1,38 @@
 import java.util.Scanner;
 
 public class Board {
+     Scanner scan = new Scanner(System.in);
     private int row = 10;
     private int column = 10;
     int[] ships = new int[5];
 
     int [][] game = new int[row][column];
-
-
+    int x;  
+    int y;
 
 public void placeShip(String shipType, int shipSize){
-    Scanner scan = new Scanner(System.in);
     int coordinate;//initializing the coordinate for the ship in a two digit integer
     System.out.println("\n"+shipType);
-    int x;
-    int y;
+    
     do{
     coordinate = scan.nextInt();
-    x = coordinate%10;
-    y = (int)(coordinate/10);
-    System.out.println(x+y);
-        if(isOccupied(x,y)||isOutofbound(x,y)){
+    x = (int)(coordinate/10);
+    y = coordinate%10;
+        if(isOutofbound(x,y)||isOccupied(x,y)){
         System.out.print("Invalid coordinate, try again.");
     }
     }
-    while(isOccupied(x,y)||isOutofbound(x,y));
+    while(isOutofbound(x,y)||isOccupied(x,y));
     
 
-    //game[x][y] = shipSize;
+    game[x][y] = shipSize;
 
     System.out.println("East(1),North(2),West(3),South(4)");
     int facing = scan.nextInt();
         for(int i=1; i<shipSize; i++){
             switch(facing){
             case 1: 
-            //if(isOutofbound(x, y+i)||isOccupied(x, y+i))
+            if(isOutofbound(x, y+i)||isOccupied(x, y+i))//short circuit calculation
             game[x][y+i] = shipSize;
             break;
             case 2:
