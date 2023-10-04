@@ -19,6 +19,7 @@ public void placeShip(String shipType, int shipSize){
     coordinate = scan.nextInt();
     x = coordinate%10;
     y = (int)(coordinate/10);
+    System.out.println(x+y);
         if(isOccupied(x,y)||isOutofbound(x,y)){
         System.out.print("Invalid coordinate, try again.");
     }
@@ -54,11 +55,12 @@ public void placeShip(String shipType, int shipSize){
    
    
     private boolean isOccupied(int x, int y){
-        return game[x][y]!=0;
+        return (game[x][y]!=0);
     } 
 
     private boolean isOutofbound(int x, int y){
-        return x<0||x>row-1||y<0||y>column-1;
+        
+        return (x<0||x>9||y<0||y>9);
     } 
    
     public void printBoard(){
