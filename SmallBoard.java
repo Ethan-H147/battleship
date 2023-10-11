@@ -108,6 +108,20 @@ public class SmallBoard {
         printBoard2();
     }
 
+
+    public boolean shipsAnnihilated() {//this method is to check if the game's over, also the same thing from regular
+    boolean shipsAnnihilated = true;
+    for (int r = 0; r < row; r++) {
+        for (int c = 0; c < column; c++) {
+            if (game[r][c] != 0 && guess[r][c] != 'x') {
+                shipsAnnihilated = false;
+                return shipsAnnihilated;  // early exit if there's an unmarked hit
+            }
+        }
+    }
+    return shipsAnnihilated;
+    }
+
     public void printBoard(){//print the 8x8 board with ships,only for testing
             for (int r = 0; r <= column-1; r++){
                 System.out.print("\n");
