@@ -77,6 +77,37 @@ public class SmallBoard {
             printBoard();
         }
 
+
+
+
+        public void guessSetup() {//copy pasted from regular, set up the guessing board
+		for (int r = 0; r < row; r++){ 
+            for (int c = 0; c < column; c++){
+                guess[r][c]='0';
+            }
+        }
+	}
+
+    public void guessCoordinate() {//also copy pasted from regular, exact same thing
+        System.out.println("\nEnter your guess");
+        int coordinate;
+        do{
+        coordinate = scan.nextInt();
+        x = coordinate / 10;
+        y = coordinate % 10;
+        }
+        while(isOutofbound(x,y));
+	    if (game[x][y] != 0) {//the corresponding position on the board with ships, if it's not 0 then it's a hit
+               System.out.println("Hit!");
+                guess[x][y] = 'X';
+            } 
+		else {// if not 0 will become O
+                System.out.println("Miss!");
+				guess[x][y] = 'O';
+            }
+        printBoard2();
+    }
+
     public void printBoard(){//print the 8x8 board with ships,only for testing
             for (int r = 0; r <= column-1; r++){
                 System.out.print("\n");
