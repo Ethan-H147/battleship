@@ -44,7 +44,7 @@ public class Instruction {
                         "- For regular game rules, please read 'Basic Rules'.\n" +
                         "- In a fast game, the computer will automatically place 3 ships.\n" +
                         "- The only player will guess the coordinates of the three ships.\n" +
-                        "- The board with ships will not be shown.");
+                        "- The board with ships will not be shown.\n");
                         instruction();
             break;
             case "S":
