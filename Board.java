@@ -103,6 +103,14 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         y = coordinate % 10;
         }
         while(isOutofbound(x,y));
+	    if (game[x][y] != 0) {//the corresponding position on the board with ships, if it's not 0 then it's a hit
+               System.out.println("Hit!");
+                guess[x][y] = 'X';
+            } 
+		else {// if not 0 will become O
+                System.out.println("Miss!");
+				guess[x][y] = 'O';
+            }
         printBoard2();
     }
 
