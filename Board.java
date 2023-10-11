@@ -118,7 +118,7 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
     boolean shipsAnnihilated = true;// the corresponding position on the guessing board is not X, that means the games is not over yet
     for (int r = 0; r < row; r++) {
         for (int c = 0; c < column; c++) {
-            if (game[r][c] != 0 && guess[r][c] != 'x') {
+            if (game[r][c] != 0 && guess[r][c] != 'X') {
                 shipsAnnihilated = false;
                 return shipsAnnihilated;  // early exit if there's an unmarked hit
             }

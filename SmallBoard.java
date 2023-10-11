@@ -113,7 +113,7 @@ public class SmallBoard {
     boolean shipsAnnihilated = true;
     for (int r = 0; r < row; r++) {
         for (int c = 0; c < column; c++) {
-            if (game[r][c] != 0 && guess[r][c] != 'x') {
+            if (game[r][c] != 0 && guess[r][c] != 'X') {
                 shipsAnnihilated = false;
                 return shipsAnnihilated;  // early exit if there's an unmarked hit
             }
