@@ -103,6 +103,20 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         y = coordinate % 10;
         }
         while(isOutofbound(x,y));
+        printBoard2();
+    }
+
+    public boolean shipsAnnihilated() {//this method is to check if the game's over, if for any non zero cell on the ship board,
+    boolean shipsAnnihilated = true;// the corresponding position on the guessing board is not X, that means the games is not over yet
+    for (int r = 0; r < row; r++) {
+        for (int c = 0; c < column; c++) {
+            if (game[r][c] != 0 && guess[r][c] != 'x') {
+                shipsAnnihilated = false;
+                return shipsAnnihilated;  // early exit if there's an unmarked hit
+            }
+        }
+    }
+    return shipsAnnihilated;
     }
 
     private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
