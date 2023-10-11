@@ -7,6 +7,7 @@ public class Board {
     //int[] ships = new int[5]; this is useless although I keeped it, ships are not considered an entity in the code
 
     int [][] game = new int[row][column];
+    char [][] guess = new char[row][column];
     int x;  
     int y;
     //initializing 2d arrays and coordinates
@@ -39,7 +40,7 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
             switch (facing) {//do a check for the facing selected, if the ship is overlapping or out of bound it will label the
                 case 1:      //facing as invalid and will prompt the user again
                     if (isOutofbound(x,y+i) || isOccupied(x,y+i)) {
-                        facingValid = false;
+                        facingValid = false;//switch the boolean so it go back and prompt again
                     }
                     break;
                 case 2:
@@ -101,6 +102,15 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
             System.out.print("\n");
             for (int c = 0; c <= row-1; c++){
                 System.out.print(game[r][c]+" ");
+            }
+        }
+    }
+
+    public void printBoard2(){//same thing except print the guessing board instead of the ship board
+        for (int r = 0; r <= column-1; r++){
+            System.out.print("\n");
+            for (int c = 0; c <= row-1; c++){
+                System.out.print(guess[r][c]+" ");
             }
         }
     }
