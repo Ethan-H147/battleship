@@ -125,4 +125,13 @@ public class SmallBoard {
                 }
             }
     }
+
+    private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
+        return (game[x][y]!=0);
+    } 
+
+    private boolean isOutofbound(int x, int y){//if x or y goes out it's out of bound
+        
+        return (x<0||x>7||y<0||y>7);
+    } 
 }
