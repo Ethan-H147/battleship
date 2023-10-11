@@ -27,6 +27,13 @@ public class Instruction {
                 System.out.print("\n");
                 break;
             case "P":
+                System.out.print("- In a regular game, the first player will be prompted to place 5 ships on the 10x10 board.\n" + 
+                        "- The ships are: Aircraft Carrier, Battleship, Cruiser, Submarine and Destroyer.\n" + 
+                        "- For each ship, player 1 will choose a starting coordinate(found in basic rules).\n" +
+                        "- Then, the player will be asked to choose the facing of the ship.\n" +
+                        "- Ships cannot go out of the board or overlap with other ships.\n" + 
+                        "- If the starting coordinate or facing will make the ship overlap or go out of bound, the player will be reprompted.\n" + 
+                        "- This phase will only end when the player has placed all 5 ships.\n");
             break;
             case "G":
             break;
