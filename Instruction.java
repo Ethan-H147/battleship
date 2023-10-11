@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Instruction {
     Scanner scan = new Scanner(System.in);
+
+
     public void instruction(){
         System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Skip-S");
         String i = scan.nextLine();
@@ -25,6 +27,7 @@ public class Instruction {
                     System.out.print(r);
                 }
                 System.out.print("\n");
+                instruction();
                 break;
             case "P":
                 System.out.print("- In a regular game, the first player will be prompted to place 5 ships on the 10x10 board.\n" + 
@@ -34,6 +37,7 @@ public class Instruction {
                         "- Ships cannot go out of the board or overlap with other ships.\n" + 
                         "- If the starting coordinate or facing will make the ship overlap or go out of bound, the player will be reprompted.\n" + 
                         "- This phase will only end when the player has placed all 5 ships.\n");
+                        instruction();
             break;
             case "G":
             System.out.print("- There are two modes: Regular game and fast game.\n" + 
@@ -41,6 +45,7 @@ public class Instruction {
                         "- In a fast game, the computer will automatically place 3 ships.\n" +
                         "- The only player will guess the coordinates of the three ships.\n" +
                         "- The board with ships will not be shown.");
+                        instruction();
             break;
             case "S":
             break;
