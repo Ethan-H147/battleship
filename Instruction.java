@@ -4,7 +4,7 @@ public class Instruction {
     Scanner scan = new Scanner(System.in);
 
 
-    public void instruction(){
+    public void instruction(){//the method of prompting user letters and print out the corresponding tutorial
         System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Skip-S");
         String i = scan.nextLine();
         switch(i){
@@ -16,15 +16,15 @@ public class Instruction {
                         "- A hit is recorded with an 'X' when a guess lands on a part of a ship.\n" + 
                         "- A miss is recorded with a 'O' when a guess lands on an empty cell.\n" + 
                         "- The game continues until the first player's fleet is completely destroyed.\n");
-                for(int j=0;j<10;j++){
-                    System.out.print(j+" ");
+                for(int j=0;j<10;j++){//these for loops are to print a board that is labelled with coordinates 0-9
+                    System.out.print(j+" ");//this is the first row, which is only coordinates not a part of the board
                 }
-                for (int r = 0; r < 10; r++){
+                for (int r = 0; r < 10; r++){//similar to print board, but added row numbers at the end of each row, so the rows and columns are all labelled
                     System.out.print("\n");
                     for (int c = 0; c < 10; c++){
-                        System.out.print("0 ");
+                        System.out.print("0 ");//content of an empty board
                     }
-                    System.out.print(r);
+                    System.out.print(r);//row number
                 }
                 System.out.print("\n");
                 instruction();
