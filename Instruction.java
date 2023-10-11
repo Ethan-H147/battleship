@@ -36,6 +36,11 @@ public class Instruction {
                         "- This phase will only end when the player has placed all 5 ships.\n");
             break;
             case "G":
+            System.out.print("- There are two modes: Regular game and fast game.\n" + 
+                        "- For regular game rules, please read 'Basic Rules'.\n" +
+                        "- In a fast game, the computer will automatically place 3 ships.\n" +
+                        "- The only player will guess the coordinates of the three ships.\n" +
+                        "- The board with ships will not be shown.");
             break;
             case "S":
             break;
