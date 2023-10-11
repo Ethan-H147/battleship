@@ -86,11 +86,11 @@ public class SmallBoard {
             }
     }
 
-    public void printBoard(){//exact same thing except print guess instead of game
+    public void printBoard2(){//exact same thing except print guess instead of game
             for (int r = 0; r <= column-1; r++){
                 System.out.print("\n");
                 for (int c = 0; c <= row-1; c++){
-                    System.out.print(game[r][c]+" ");
+                    System.out.print(guess[r][c]+" ");
                 }
             }
     }
