@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Board {
+public class Board {//the class for regular game, SmallBoard is a simplified version of this
      Scanner scan = new Scanner(System.in);
     private int row = 10;//set the size of the board
     private int column = 10;

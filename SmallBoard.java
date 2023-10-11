@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class SmallBoard {
+public class SmallBoard {//the class for fast game, the board is 8x8 so I called it SmallBoard
     Scanner scan = new Scanner(System.in);
     private int row = 8;//set the size of the board
     private int column = 8;
