@@ -2,15 +2,17 @@ import java.util.Scanner;
 
 public class Board {
      Scanner scan = new Scanner(System.in);
-    private int row = 10;
+    private int row = 10;//set the size of the board
     private int column = 10;
-    int[] ships = new int[5];
+    //int[] ships = new int[5]; this is useless although I keeped it, ships are not considered an entity in the code
 
     int [][] game = new int[row][column];
     int x;  
     int y;
+    //initializing 2d arrays and coordinates
 
-public void placeShip(String shipType, int shipSize){
+public void placeShip(String shipType, int shipSize){//place ship, this is a simplified version, 
+    //for each ship I just need to call this with different size and name
     int coordinate;//initializing the coordinate for the ship in a two digit integer
     System.out.println("\n"+shipType);
     
@@ -52,16 +54,16 @@ public void placeShip(String shipType, int shipSize){
     
    
    
-    private boolean isOccupied(int x, int y){
+    private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
         return (game[x][y]!=0);
     } 
 
-    private boolean isOutofbound(int x, int y){
+    private boolean isOutofbound(int x, int y){//if x or y goes out it's out of bound
         
         return (x<0||x>9||y<0||y>9);
     } 
    
-    public void printBoard(){
+    public void printBoard(){//print the 10x10 board with ships using two for loops
         for (int r = 0; r <= column-1; r++){
             System.out.print("\n");
             for (int c = 0; c <= row-1; c++){
