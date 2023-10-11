@@ -86,7 +86,24 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         printBoard();
     }
 
+    public void guessSetup() {//I made this just to set up the board, if I put it in the guessCoordinate method it will reset
+		for (int r = 0; r < row; r++){ // the whole board every time the player guesses
+            for (int c = 0; c < column; c++){
+                guess[r][c]='0';
+            }
+        }
+	}
 
+    public void guessCoordinate() {//the same format as the coordinates in placeShips, if the position on the ship board is not 0,
+        System.out.println("\nEnter your guess");//then it's a hit, and the cell on guessing board will become x
+        int coordinate;
+        do{
+        coordinate = scan.nextInt();
+        x = coordinate / 10;
+        y = coordinate % 10;
+        }
+        while(isOutofbound(x,y));
+    }
 
     private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
         return (game[x][y]!=0);
