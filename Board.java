@@ -29,11 +29,12 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
     game[x][y] = shipSize;
 
     int facing;
-	boolean facingValid = true;
+	boolean facingValid;//here even if you make it true later in the do while loop there still need to be a switch, otherwise it can't switch back
 
     do {
-        System.out.println("East(1),North(2),West(3),South(4)");
-        facing = scan.nextInt();       
+        facingValid = true;//I made a mistake here, I initially had this statement outside the do while loop, so if the first
+        System.out.println("East(1),North(2),West(3),South(4)");//time it become false, it won't change back, so I have to set the value
+        facing = scan.nextInt();                                  //in the loop
         for (int i = 1; i < shipSize; i++) {
             switch (facing) {//do a check for the facing selected, if the ship is overlapping or out of bound it will label the
                 case 1:      //facing as invalid and will prompt the user again
@@ -85,7 +86,7 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
     }
 
 
-    
+
     private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
         return (game[x][y]!=0);
     } 
