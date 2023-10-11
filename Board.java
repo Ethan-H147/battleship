@@ -24,17 +24,50 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         System.out.print("Invalid coordinate, try again.");
     }
     }
-    while(isOutofbound(x,y)||isOccupied(x,y));
+    while(isOutofbound(x,y)||isOccupied(x,y));//short circuit calculation
     
-
     game[x][y] = shipSize;
 
-    System.out.println("East(1),North(2),West(3),South(4)");
-    int facing = scan.nextInt();
-        for(int i=1; i<shipSize; i++){
+    int facing;
+	boolean facingValid = true;
+
+    do {
+        System.out.println("East(1),North(2),West(3),South(4)");
+        facing = scan.nextInt();       
+        for (int i = 1; i < shipSize; i++) {
+            switch (facing) {//do a check for the facing selected, if the ship is overlapping or out of bound it will label the
+                case 1:      //facing as invalid and will prompt the user again
+                    if (isOutofbound(x,y+i) || isOccupied(x,y+i)) {
+                        facingValid = false;
+                    }
+                    break;
+                case 2:
+                    if (isOutofbound(x-i,y) || isOccupied(x-i,y)) {
+                        facingValid = false;
+                    }
+                    break;
+                case 3:
+                    if (isOutofbound(x,y -i) || isOccupied(x,y-i)) {
+                        facingValid = false;
+                    }
+                    break;
+                case 4:
+                    if (isOutofbound(x+i,y) || isOccupied(x+i,y)) {
+                        facingValid = false;
+                    }
+                    break;
+            }
+            if (!facingValid) {
+                System.out.println("Invalid facing, try again.");
+                break;
+            }
+        }
+    } while (!facingValid);//repeat until the player gets a valid facing
+        
+    
+    for(int i=1; i<shipSize; i++){
             switch(facing){
             case 1: 
-            if(isOutofbound(x, y+i)||isOccupied(x, y+i))//short circuit calculation
             game[x][y+i] = shipSize;
             break;
             case 2:
@@ -50,10 +83,9 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         }
         printBoard();
     }
+
+
     
-    
-   
-   
     private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
         return (game[x][y]!=0);
     } 
