@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Instruction {
+public class Instruction {//class for instructions, although it's not necessary, I still made a separate file
     Scanner scan = new Scanner(System.in);
 
 

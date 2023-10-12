@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Tester{
      public static void main(String[] args){
       Board ten = new Board();
+      SmallBoard eight = new SmallBoard();
      Instruction a = new Instruction();
       Scanner scan = new Scanner(System.in);
       a.instruction();
@@ -19,6 +20,17 @@ public class Tester{
         ten.guessCoordinate();
 		}
 		while(!ten.shipsAnnihilated());
+		System.out.println("Congratulations! You won the game! All ships have been annihilated!");
+     }
+     if(gametype.equals("F")||gametype.equals("f")){
+        eight.placeShip("Aircraft Carrier", 5);
+        eight.placeShip("Battleship", 4);
+        eight.placeShip("Cruiser", 3);
+        eight.guessSetup();
+        do{
+        eight.guessCoordinate();
+		}
+		while(!eight.shipsAnnihilated());
 		System.out.println("Congratulations! You won the game! All ships have been annihilated!");
      }
      }
