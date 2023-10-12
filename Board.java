@@ -106,8 +106,11 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         printBoard2();
     }
 
-    public boolean shipsAnnihilated() {//this method is to check if the game's over, if for any non zero cell on the ship board,
-    boolean shipsAnnihilated = true;// the corresponding position on the guessing board is not X, that means the games is not over yet
+
+    //this method is to check if the game's over, if for any non zero cell on the ship board,
+    // the corresponding position on the guessing board is not X, that means the games is not over yet
+    public boolean shipsAnnihilated() {
+    boolean shipsAnnihilated = true;
     for (int r = 0; r < row; r++) {
         for (int c = 0; c < column; c++) {
             if (game[r][c] != 0 && guess[r][c] != 'x') {
