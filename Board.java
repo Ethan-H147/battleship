@@ -67,7 +67,7 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
     } while (!facingValid);//repeat until the player gets a valid facing
         
     
-    for(int i=1; i<shipSize; i++){
+    for(int i=1; i<shipSize; i++){//place the entire ship after proven valid
             switch(facing){
             case 1: 
             game[x][y+i] = shipSize;

@@ -15,8 +15,8 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
         System.out.println("\n"+shipType);
         
         do{
-        x = (int)8*Math.random();
-        y = (int)8*Math.random();
+        x = (int)(8*Math.random());
+        y = (int)(8*Math.random());
         }
         while(isOutofbound(x,y)||isOccupied(x,y));
         
@@ -27,7 +27,7 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
     
         do {
             facingValid = true;
-            facing = (int)5*Math.random();                            
+            facing = (int)(5*Math.random());                            
             for (int i = 1; i < shipSize; i++) {
                 switch (facing) {
                     case 1:
@@ -74,7 +74,7 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
                 break;
                 }
             }
-            printBoard();
+            //printBoard(); this line is for testing, since the ship board is not shown in actual game
         }
 
 
