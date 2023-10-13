@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
+//the main part of the game, carrying out the basic game logic, and the choice of fast and regular is made here
 public class Tester{
+    //main, the core of the program
      public static void main(String[] args){
       Board ten = new Board();
       SmallBoard eight = new SmallBoard();
