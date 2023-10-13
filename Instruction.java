@@ -5,7 +5,7 @@ public class Instruction {//class for instructions, although it's not necessary,
 
 
     public void instruction(){//the method of prompting user letters and print out the corresponding tutorial
-        System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Skip-S");
+        System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Shiptypes-T||Skip-S");
         String i = scan.nextLine();
         switch(i){
             case "B":
@@ -46,6 +46,14 @@ public class Instruction {//class for instructions, although it's not necessary,
                         "- The only player will guess the coordinates of the three ships.\n" +
                         "- The board with ships will not be shown.\n");
                         instruction();
+            break;
+            case "T":
+            System.out.print("Aircraft Carrier - 5 5 5 5 5\n"+
+            "Battleship - 4 4 4 4\n"+
+            "Cruiser - 3 3 3\n"+
+            "Submarine - 2 2\n"+
+            "Destroyer - 2 2\n");
+            instruction();
             break;
             case "S":
             break;
