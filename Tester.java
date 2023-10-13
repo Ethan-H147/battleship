@@ -16,7 +16,7 @@ public class Tester{
         ten.placeShip("Submarine", 2);
         ten.placeShip("Destroyer", 2);
         ten.guessSetup();
-        do{
+        do{//continue to prompt the user for guesses until all ships are annihilated
         ten.guessCoordinate();
 		}
 		while(!ten.shipsAnnihilated());
