@@ -1,5 +1,7 @@
 import java.util.Scanner;
-public class SmallBoard {//the class for fast game, the board is 8x8 so I called it SmallBoard
+
+//the class for fast game, the board is 8x8 so I called it SmallBoard
+public class SmallBoard {
     Scanner scan = new Scanner(System.in);
     private int row = 8;//set the size of the board
     private int column = 8;
@@ -9,9 +11,8 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
     
     int x;  
     int y;
-
-    public void placeShip(String shipType, int shipSize){//place ship, this is a simplified version, 
-        //for each ship I just need to call this with different size and name
+    //place ship, this is a simplified version, for each ship I just need to call this with different size and name
+    public void placeShip(String shipType, int shipSize){
         System.out.println("\n"+shipType);
         
         do{
@@ -79,16 +80,16 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
 
 
 
-
-        public void guessSetup() {//copy pasted from regular, set up the guessing board
+        //copy pasted from regular, set up the guessing board
+        public void guessSetup() {
 		for (int r = 0; r < row; r++){ 
             for (int c = 0; c < column; c++){
                 guess[r][c]='0';
             }
         }
 	}
-
-    public void guessCoordinate() {//also copy pasted from regular, exact same thing
+    //also copy pasted from regular, exact same thing
+    public void guessCoordinate() {
         System.out.println("\nEnter your guess");
         int coordinate;
         do{
@@ -108,8 +109,8 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
         printBoard2();
     }
 
-
-    public boolean shipsAnnihilated() {//this method is to check if the game's over, also the same thing from regular
+    //this method is to check if the game's over, also the same thing from regular
+    public boolean shipsAnnihilated() {
     boolean shipsAnnihilated = true;
     for (int r = 0; r < row; r++) {
         for (int c = 0; c < column; c++) {
@@ -121,8 +122,8 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
     }
     return shipsAnnihilated;
     }
-
-    public void printBoard(){//print the 8x8 board with ships,only for testing
+    //print the 8x8 board with ships,only for testing
+    public void printBoard(){
             for (int r = 0; r <= column-1; r++){
                 System.out.print("\n");
                 for (int c = 0; c <= row-1; c++){
@@ -130,8 +131,8 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
                 }
             }
     }
-
-    public void printBoard2(){//exact same thing except print guess instead of game
+    //exact same thing except print guess instead of game   
+    public void printBoard2(){
             for (int r = 0; r <= column-1; r++){
                 System.out.print("\n");
                 for (int c = 0; c <= row-1; c++){
@@ -139,12 +140,12 @@ public class SmallBoard {//the class for fast game, the board is 8x8 so I called
                 }
             }
     }
-
-    private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
+    //if the cell is not 0 it's occupied
+    private boolean isOccupied(int x, int y){
         return (game[x][y]!=0);
     } 
-
-    private boolean isOutofbound(int x, int y){//if x or y goes out it's out of bound
+    //if x or y goes out it's out of bound
+    private boolean isOutofbound(int x, int y){
         
         return (x<0||x>7||y<0||y>7);
     } 

@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
-public class Instruction {//class for instructions, although it's not necessary, I still made a separate file
+//class for instructions, although it's not necessary, I still made a separate file
+public class Instruction {
     Scanner scan = new Scanner(System.in);
 
-
-    public void instruction(){//the method of prompting user letters and print out the corresponding tutorial
+    //the method of prompting user letters and print out the corresponding tutorial
+    public void instruction(){
         System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Shiptypes-T||Skip-S");
         String i = scan.nextLine();
         switch(i){

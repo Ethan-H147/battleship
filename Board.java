@@ -12,18 +12,18 @@ public class Board {//the class for regular game, SmallBoard is a simplified ver
     int y;
     //initializing 2d arrays and coordinates
 
-public void placeShip(String shipType, int shipSize){//place ship, this is a simplified version, 
-    //for each ship I just need to call this with different size and name
-    int coordinate;//initializing the coordinate for the ship in a two digit integer
-    System.out.println("\n"+shipType);
+//place ship, this is a simplified version, for each ship I just need to call this with different size and name
+    public void placeShip(String shipType, int shipSize){
+        int coordinate;//initializing the coordinate for the ship in a two digit integer
+        System.out.println("\n"+shipType);
     
-    do{
-    coordinate = scan.nextInt();
-    x = (int)(coordinate/10);
-    y = coordinate%10;
+        do{
+        coordinate = scan.nextInt();
+        x = (int)(coordinate/10);
+        y = coordinate%10;
         if(isOutofbound(x,y)||isOccupied(x,y)){
-        System.out.print("Invalid coordinate, try again.");
-    }
+            System.out.print("Invalid coordinate, try again.");
+        }
     }
     while(isOutofbound(x,y)||isOccupied(x,y));//short circuit calculation
     
@@ -37,8 +37,9 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         System.out.println("East(1),North(2),West(3),South(4)");//time it become false, it won't change back, so I have to set the value
         facing = scan.nextInt();                                  //in the loop
         for (int i = 1; i < shipSize; i++) {
-            switch (facing) {//do a check for the facing selected, if the ship is overlapping or out of bound it will label the
-                case 1:      //facing as invalid and will prompt the user again
+            //do a check for the facing selected, if the ship is overlapping or out of bound it will label the facing as invalid and will prompt the user again
+            switch (facing) {
+                case 1: 
                     if (isOutofbound(x,y+i) || isOccupied(x,y+i)) {
                         facingValid = false;//switch the boolean so it go back and prompt again
                     }
@@ -86,16 +87,18 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         printBoard();
     }
 
-    public void guessSetup() {//I made this just to set up the board, if I put it in the guessCoordinate method it will reset
-		for (int r = 0; r < row; r++){ // the whole board every time the player guesses
+    //I made this just to set up the board, if I put it in the guessCoordinate method it will reset the whole board every time the player guesses
+    public void guessSetup() {
+		for (int r = 0; r < row; r++){ 
             for (int c = 0; c < column; c++){
                 guess[r][c]='0';
             }
         }
 	}
 
-    public void guessCoordinate() {//the same format as the coordinates in placeShips, if the position on the ship board is not 0,
-        System.out.println("\nEnter your guess");//then it's a hit, and the cell on guessing board will become x
+    //the same format as the coordinates in placeShips, if the position on the ship board is not 0, then it's a hit, and the cell on guessing board will become x
+    public void guessCoordinate() {
+        System.out.println("\nEnter your guess");
         int coordinate;
         do{
         coordinate = scan.nextInt();
@@ -130,16 +133,19 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
     return shipsAnnihilated;
     }
 
-    private boolean isOccupied(int x, int y){//if the cell is not 0 it's occupied
+    //if the cell is not 0 it's occupied
+    private boolean isOccupied(int x, int y){
         return (game[x][y]!=0);
     } 
 
-    private boolean isOutofbound(int x, int y){//if x or y goes out it's out of bound
+    //if x or y goes out it's out of bound
+    private boolean isOutofbound(int x, int y){
         
         return (x<0||x>9||y<0||y>9);
     } 
    
-    public void printBoard(){//print the 10x10 board with ships using two for loops
+    //print the 10x10 board with ships using two for loops
+    public void printBoard(){
         for (int r = 0; r <= column-1; r++){
             System.out.print("\n");
             for (int c = 0; c <= row-1; c++){
@@ -148,7 +154,8 @@ public void placeShip(String shipType, int shipSize){//place ship, this is a sim
         }
     }
 
-    public void printBoard2(){//same thing except print the guessing board instead of the ship board
+    //same thing except print the guessing board instead of the ship board
+    public void printBoard2(){
         for (int r = 0; r <= column-1; r++){
             System.out.print("\n");
             for (int c = 0; c <= row-1; c++){
