@@ -6,7 +6,7 @@ public class Instruction {
 
     //the method of prompting user letters and print out the corresponding tutorial
     public void instruction(){
-        System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Shiptypes-T||Skip-S");
+        System.out.println("Instructions:Basic Rules-B||Placement Rules-P||Gametypes-G||Shiptypes-T||Skip-S(Put in the corresponding letters for instructions)");
         String i = scan.nextLine();
         switch(i){
             case "B":
