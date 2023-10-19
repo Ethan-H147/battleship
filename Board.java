@@ -15,7 +15,7 @@ public class Board {//the class for regular game, SmallBoard is a simplified ver
 //place ship, this is a simplified version, for each ship I just need to call this with different size and name
     public void placeShip(String shipType, int shipSize){
         int coordinate;//initializing the coordinate for the ship in a two digit integer
-        System.out.println("\n"+shipType);
+        System.out.println("\n"+shipType+" (Place your coordinate)");
     
         do{
         coordinate = scan.nextInt();
