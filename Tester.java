@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class Tester{
     //main, the core of the program
      public static void main(String[] args){
-      Board ten = new Board();
-      SmallBoard eight = new SmallBoard();
-     Instruction a = new Instruction();
+      Board ten = new Board();//initializing regular game board
+      SmallBoard eight = new SmallBoard();//fast game board
+     Instruction a = new Instruction();//for instruction class
       Scanner scan = new Scanner(System.in);
       a.instruction();
           System.out.println("Fast/Regular Game?(F/R)");
