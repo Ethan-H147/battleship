@@ -13,7 +13,7 @@ public class Instruction {
                 System.out.print("- First player has a fleet of ships and a board to place those ships.\n" + 
                         "- Second player will guess the coordinates of the opponent's ships.\n" + 
                         "- Coordinates are represented by two digit integers, the first digit is the row number and the second is column.\n" +
-                        "- In a 10x10 board, numbers are labelled from 0 to 9, so the top left is 00 and the bottom right is 99.\n" +
+                        "- In a 10x10 board, numbers are labelled from 0 to 9, so the top left is 00 and the second last counting from left to right is 98.\n" +
                         "- A hit is recorded with an 'X' when a guess lands on a part of a ship.\n" + 
                         "- A miss is recorded with a 'O' when a guess lands on an empty cell.\n" + 
                         "- The game continues until the first player's fleet is completely destroyed.\n");
